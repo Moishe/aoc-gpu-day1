@@ -7,6 +7,7 @@ An app that performs a simple calculation on a GPU.
 
 #import <Foundation/Foundation.h>
 #import <Metal/Metal.h>
+#import "MetalInc.h"
 #import "MetalAdder.h"
 
 // This is the C version of the function that the sample
@@ -29,15 +30,23 @@ int main(int argc, const char * argv[]) {
 
         // Create the custom object used to encapsulate the Metal code.
         // Initializes objects to communicate with the GPU.
-        MetalAdder* adder = [[MetalAdder alloc] initWithDevice:device];
+        MetalInc* inc = [[MetalInc alloc] initWithDevice:device];
         
         // Create buffers to hold data
-        [adder prepareData];
+        [inc prepareData];
         
         // Send a command to the GPU to perform the calculation.
-        [adder sendComputeCommand];
+        [inc sendComputeCommand];
 
-        NSLog(@"Execution finished");
+        id<MTLBuffer> mBufferResult = [inc getComputedBuffer];
+        
+        MetalAdder* add = [[MetalAdder alloc] initWithDevice:device];
+        
+        [add prepareData];
+        
+        [add sendComputeCommand];
+
+        NSLog(@"Execution finished.");
     }
     return 0;
 }
