@@ -16,6 +16,8 @@ kernel void find_incs(device const int* inA,
     if (index > 0) {
         result[index] = inA[index] > inA[index - 1] ? 1 : 0;
     } else {
+        // Note that we use the fact that this is guaranteed to be zero
+        // to leave space for our midpoint in the next stage
         result[index] = 0;
     }
 }

@@ -157,8 +157,9 @@ const unsigned int data[] = {
     int* a = _mBufferIn.contents;
     int* result = _mBufferResult.contents;
 
-    for (unsigned long index = 0; index < inc_arrayLength; index++)
+    for (unsigned int index = 0; index < inc_arrayLength; index++)
     {
+        printf("%d: %d\n", index, result[index]);
         int expected_result = 0;
         if (index > 0 && a[index] > a[index - 1]) {
             expected_result = 1;

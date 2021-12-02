@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3ADA093523458F4800F5A9C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADA093423458F4400F5A9C6 /* CoreGraphics.framework */; };
-		5FB82D19221CD515006D0331 /* MetalAdder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB82D18221CD515006D0331 /* MetalAdder.m */; };
 		5FFAD4D421C8647E00384F46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAD4D321C8647E00384F46 /* main.m */; };
 		5FFAD4DC21C8648800384F46 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFAD4DB21C8648800384F46 /* Metal.framework */; };
-		5FFAD4DE21C869B700384F46 /* add.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAD4DD21C869B700384F46 /* add.metal */; };
 		9CA2FF8027583BBC00C7BE3F /* inc.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2FF7F27583BBC00C7BE3F /* inc.metal */; };
 		9CA2FF8227583D2400C7BE3F /* MetalInc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2FF8127583D2400C7BE3F /* MetalInc.m */; };
+		9CA2FF852759042500C7BE3F /* sum.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2FF842759042500C7BE3F /* sum.metal */; };
+		9CA2FF872759044600C7BE3F /* MetalSum.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2FF862759044600C7BE3F /* MetalSum.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,17 +31,16 @@
 /* Begin PBXFileReference section */
 		00E3B7B90BF943DB3EE281D2 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		3ADA093423458F4400F5A9C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.Internal.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		4A106723543224C1C65C1662 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		5FB82D17221CD515006D0331 /* MetalAdder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalAdder.h; sourceTree = "<group>"; };
-		5FB82D18221CD515006D0331 /* MetalAdder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetalAdder.m; sourceTree = "<group>"; };
 		5FB82D1A221CE2C7006D0331 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5FFAD4D021C8647E00384F46 /* MetalComputeBasic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MetalComputeBasic; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFAD4D321C8647E00384F46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5FFAD4DB21C8648800384F46 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
-		5FFAD4DD21C869B700384F46 /* add.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = add.metal; sourceTree = "<group>"; };
 		9CA2FF7F27583BBC00C7BE3F /* inc.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = inc.metal; sourceTree = "<group>"; };
 		9CA2FF8127583D2400C7BE3F /* MetalInc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetalInc.m; sourceTree = "<group>"; };
 		9CA2FF8327583D4D00C7BE3F /* MetalInc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalInc.h; sourceTree = "<group>"; };
+		9CA2FF842759042500C7BE3F /* sum.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = sum.metal; sourceTree = "<group>"; };
+		9CA2FF862759044600C7BE3F /* MetalSum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetalSum.m; sourceTree = "<group>"; };
+		9CA2FF882759046A00C7BE3F /* MetalSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalSum.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +72,6 @@
 				5FFAD4D121C8647E00384F46 /* Products */,
 				5FFAD4DA21C8648800384F46 /* Frameworks */,
 				23874244E20619B16248E770 /* Configuration */,
-				7A094A9D7CE6DF0EC0F9700D /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,12 +87,12 @@
 			isa = PBXGroup;
 			children = (
 				5FFAD4D321C8647E00384F46 /* main.m */,
-				5FB82D17221CD515006D0331 /* MetalAdder.h */,
-				5FB82D18221CD515006D0331 /* MetalAdder.m */,
-				5FFAD4DD21C869B700384F46 /* add.metal */,
 				9CA2FF7F27583BBC00C7BE3F /* inc.metal */,
 				9CA2FF8127583D2400C7BE3F /* MetalInc.m */,
 				9CA2FF8327583D4D00C7BE3F /* MetalInc.h */,
+				9CA2FF842759042500C7BE3F /* sum.metal */,
+				9CA2FF862759044600C7BE3F /* MetalSum.m */,
+				9CA2FF882759046A00C7BE3F /* MetalSum.h */,
 			);
 			path = MetalComputeBasic;
 			sourceTree = "<group>";
@@ -106,14 +104,6 @@
 				5FFAD4DB21C8648800384F46 /* Metal.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7A094A9D7CE6DF0EC0F9700D /* LICENSE */ = {
-			isa = PBXGroup;
-			children = (
-				4A106723543224C1C65C1662 /* LICENSE.txt */,
-			);
-			path = LICENSE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,10 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA2FF8027583BBC00C7BE3F /* inc.metal in Sources */,
-				5FB82D19221CD515006D0331 /* MetalAdder.m in Sources */,
+				9CA2FF852759042500C7BE3F /* sum.metal in Sources */,
 				5FFAD4D421C8647E00384F46 /* main.m in Sources */,
 				9CA2FF8227583D2400C7BE3F /* MetalInc.m in Sources */,
-				5FFAD4DE21C869B700384F46 /* add.metal in Sources */,
+				9CA2FF872759044600C7BE3F /* MetalSum.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

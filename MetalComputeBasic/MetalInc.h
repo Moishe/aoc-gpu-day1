@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype) initWithDevice: (id<MTLDevice>) device;
 - (void) prepareData;
 - (void) sendComputeCommand;
+//- (void) setInputBuffer: (int *) buffer;
 - (id<MTLBuffer>) getComputedBuffer;
 @end
 

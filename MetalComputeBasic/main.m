@@ -1,14 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-An app that performs a simple calculation on a GPU.
-*/
-
 #import <Foundation/Foundation.h>
 #import <Metal/Metal.h>
 #import "MetalInc.h"
-#import "MetalAdder.h"
+#import "MetalSum.h"
 
 // This is the C version of the function that the sample
 // implements in Metal Shading Language.
@@ -39,12 +32,18 @@ int main(int argc, const char * argv[]) {
         [inc sendComputeCommand];
 
         id<MTLBuffer> mBufferResult = [inc getComputedBuffer];
+        printf("increments found\n");
         
-        MetalAdder* add = [[MetalAdder alloc] initWithDevice:device];
+        int length = (int)(mBufferResult.length / sizeof(int));
+
+        ((int *)mBufferResult.contents)[0] = (int)(length / 2) + 1;
+
+        MetalSum* sum = [[MetalSum alloc] initWithDevice:device];
+        [sum setInputBuffer:(int *)mBufferResult.contents length:length + 1];
         
-        [add prepareData];
+        [sum prepareData];
         
-        [add sendComputeCommand];
+        [sum sendComputeCommand];
 
         NSLog(@"Execution finished.");
     }
